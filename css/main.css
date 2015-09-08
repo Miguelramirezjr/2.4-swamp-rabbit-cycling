@@ -161,6 +161,9 @@ body {
 .container {
   margin: 0 auto;
   max-width: 965px; }
+  @media all and (max-width: 740px) {
+    .container {
+      max-width: 480px; } }
 
 a {
   text-decoration: none; }
@@ -172,19 +175,19 @@ header {
   background-size: cover;
   border: black 10px solid;
   padding: 90px; }
+  @media all and (max-width: 740px) {
+    header {
+      background-position: left; } }
 
 article {
   font-family: "Raleway", "sans-serif";
   text-transform: uppercase;
   text-align: center;
   font-size: 30px;
-  margin-top: 111px;
-  margin-left: 100px;
-  margin-right: 75px; }
+  margin: 100px 75px;
+  color: black; }
 
 .article-1 {
-  height: 330px;
-  color: black;
   background-color: white;
   border: black 10px solid; }
 
@@ -192,75 +195,91 @@ article {
   height: 386px;
   border: black 8px solid;
   margin: 0 auto; }
-
-.pic1 {
-  max-height: 370px;
-  max-width: 313px;
-  display: inline-block;
-  overflow: hidden; }
-  .pic1 img {
+  .gallery div {
+    max-height: 370px;
+    display: inline-block;
+    overflow: hidden;
+    max-width: 32.9%; }
+  .gallery .pic1 {
     max-width: 651px;
     margin-left: -9rem; }
-
-.pic2 {
-  max-height: 370px;
-  max-width: 313px;
-  display: inline-block;
-  overflow: hidden; }
-  .pic2 img {
+  .gallery .pic2 {
     max-width: 528px;
     margin-left: -10rem; }
-
-.pic3 {
-  max-height: 370px;
-  max-width: 313px;
-  display: inline-block;
-  overflow: hidden; }
-  .pic3 img {
+  .gallery .pic3 {
     max-width: 520px;
     margin-left: -8rem; }
+  @media all and (max-width: 740px) {
+    .gallery {
+      position: relative; }
+      .gallery div {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        max-width: 100%; }
+      .gallery .pic3 {
+        margin-left: -3rem; } }
 
 .article-2 {
-  height: 410px;
   border: black 10px solid;
-  background-color: white;
-  color: black; }
+  background-color: white; }
+  @media all and (max-width: 740px) {
+    .article-2 {
+      display: none; } }
 
 .article-3 {
-  height: 400px;
-  border: black 10px solid;
-  background-color: white;
-  color: black; }
-
-.cont1 {
-  font-family: "Raleway", "sans-serif";
-  font-size: 32px;
-  text-align: center;
-  text-transform: uppercase;
-  padding-top: 75px;
-  padding-right: 50px;
-  padding-left: 60px; }
-
-.tel {
-  font-family: "Raleway", "sans-serif";
-  font-size: 40px;
-  text-align: center;
-  padding-top: 25px; }
-
-.email {
-  font-family: "Raleway", "sans-serif";
-  font-size: 30px;
-  padding-top: 30px;
-  text-align: center; }
-
-footer p {
-  height: 145px;
   border: black 10px solid;
   background-color: white;
   color: black;
-  font-family: "Raleway", "sans-serif";
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 38px;
-  font-weight: bolder;
-  padding-top: 40px; }
+  padding: 100px 75px; }
+  .article-3 p {
+    font-family: "Raleway", "sans-serif";
+    text-align: center;
+    margin-bottom: 30px; }
+    .article-3 p:last-child {
+      margin-bottom: 0; }
+  .article-3 .cont1 {
+    font-size: 32px;
+    text-transform: uppercase; }
+  .article-3 .tel {
+    font-size: 40px; }
+  .article-3 .email {
+    font-size: 30px; }
+    @media all and (max-width: 740px) {
+      .article-3 .email {
+        font-size: 20px; } }
+
+footer {
+  padding: 40px;
+  border: black 10px solid;
+  background-color: white;
+  color: black; }
+  footer p {
+    font-family: "Raleway", "sans-serif";
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 38px;
+    font-weight: bolder;
+    position: relative;
+    z-index: 1;
+    width: 75%;
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 25px; }
+    @media all and (min-width: 741px) and (max-width: 980px) {
+      footer p {
+        width: 67%; } }
+    @media all and (max-width: 740px) {
+      footer p {
+        width: 61%;
+        font-size: 25px; } }
+  footer img {
+    max-width: 100px;
+    max-height: 100px;
+    display: inline-block; }
+    @media all and (max-width: 740px) {
+      footer img {
+        max-width: 70px;
+        max-height: 70px; } }
