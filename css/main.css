@@ -149,14 +149,17 @@ table {
 html {
   box-sizing: border-box; }
 
-*,
-*::after,
-*::before {
+*, *::after, *::before {
   box-sizing: inherit; }
 
 body {
   background-color: RGBA(17, 47, 57, 1);
   margin: 0 auto; }
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0; }
 
 .container {
   margin: 0 auto;
@@ -178,6 +181,57 @@ header {
   @media all and (max-width: 740px) {
     header {
       background-position: left; } }
+
+.header-img {
+  height: 300px;
+  padding-top: 82px; }
+
+#primary_nav_wrap {
+  margin-top: -90px;
+  margin-left: 90px; }
+  #primary_nav_wrap ul {
+    list-style: none;
+    position: relative;
+    float: left;
+    margin: 0;
+    padding: 0; }
+
+#primary_nav_wrap ul a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 32px;
+  padding: 0 15px;
+  font-family: "Raleway", "sans-serif";
+  text-transform: uppercase;
+  letter-spacing: 1.5px; }
+
+#primary_nav_wrap ul li {
+  position: relative;
+  float: left;
+  margin: 0;
+  padding: 0; }
+
+#primary_nav_wrap ul li a:hover {
+  color: #000; }
+
+#primary_nav_wrap ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: RGBA(23, 46, 56, 1);
+  padding: 0;
+  letter-spacing: 1px; }
+
+#primary_nav_wrap ul ul li {
+  float: none;
+  width: 200px; }
+
+#primary_nav_wrap ul li:hover > ul {
+  display: block; }
 
 article {
   font-family: "Raleway", "sans-serif";
@@ -234,6 +288,8 @@ article {
   background-color: white;
   color: black;
   padding: 100px 75px; }
+  .article-3 a {
+    color: RGBA(72, 152, 174, 1); }
   .article-3 p {
     font-family: "Raleway", "sans-serif";
     text-align: center;
@@ -250,6 +306,11 @@ article {
     @media all and (max-width: 740px) {
       .article-3 .email {
         font-size: 20px; } }
+
+.social-icons {
+  margin-left: 300px; }
+  .social-icons a {
+    color: RGBA(23, 46, 56, 1); }
 
 footer {
   padding: 40px;
@@ -283,3 +344,63 @@ footer {
       footer img {
         max-width: 70px;
         max-height: 70px; } }
+
+.biker-logo-section a {
+  height: 50px;
+  vertical-align: top; }
+
+.biker-logos {
+  margin-left: 30px; }
+
+.slider {
+  position: relative;
+  width: 965px;
+  height: 700px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  border: black 10px solid; }
+
+.slider__wrapper {
+  list-style: none;
+  overflow: hidden;
+  *zoom: 1;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d; }
+
+.slider__item {
+  height: 100%;
+  float: left;
+  clear: none; }
+
+.slider__arrows-item {
+  position: absolute;
+  display: block;
+  margin-bottom: -20px;
+  padding: 20px; }
+
+.slider__arrows-item--right {
+  bottom: 50%;
+  right: 30px; }
+
+.slider__arrows-item--left {
+  bottom: 50%;
+  left: 30px; }
+
+.slider__nav {
+  position: absolute;
+  bottom: 30px; }
+
+.slider__nav-item {
+  width: 12px;
+  height: 12px;
+  float: left;
+  clear: none;
+  display: block;
+  margin: 0 5px;
+  background: #fff; }
+
+.slider__nav-item--current {
+  background: #ccc; }
+
+.slider__nav-item:hover {
+  background: #ccc; }
