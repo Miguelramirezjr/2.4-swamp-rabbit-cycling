@@ -16,11 +16,11 @@
         <header> <!-- Start of Header -->
             <nav id="primary_nav_wrap"> <!-- Start of Top Nav -->
                 <ul>
-                    <li class="current-menu-item"><a href="#">Home</a></li>
+                    <li class="current-menu-item"><span><a href="#">Home</a></li></span>
                     <li><a href="#">Shop</a>
                         <ul>
                             <li><a href="#">Mens</a></li>
-                            <li><a href="#">Womans</a></li>
+                            <li><a href="#">Womens</a></li>
                             <li><a href="#">Kids</a></li>
                             <li><a href="#">Sale Items</a>
                         </ul>
@@ -28,7 +28,7 @@
                     <li><a href="#">Parts & Accessories</a>
                         <ul>
                             <li><a href="#">Frames</a></li>
-                            <li><a href="#">Tires, Tubes & Wheels</a></li>
+                            <li><a href="#">Tires & Wheels</a></li>
                             <li><a href="#">Components</a></li>
                             <li><a href="#">Shoes & Peddals</a></li>
                         </ul>
@@ -44,7 +44,7 @@
                             <li><a href="#">House Calls</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li class="current-menu-item"><span><a href="#">Contact Us</a></li></span>
                 </ul>
             </nav> <!-- End of Top Nav -->
             <div class="header-img">
@@ -92,26 +92,27 @@
                 <p>2014 Swamp Rabbit Cycling LLC.</p>
                 <img src="images/swamp-logo-small-right.svg" class="footer-logo2">
 
-                <div class="biker-logo-section"> <!-- Start of Img. Slider -->
-                    <ul class="slider__wrapper">
-                        <li class="biker-logos" ><div class="box" style="background-color: RGBA(17, 47, 57, 1);"><img src="images/bianchi.svg" alt="" /></div></li>
-                        <li class="biker-logos" ><div class="box" style="background-color: RGBA(17, 47, 57, 1);"><img src="images/fuji-logo.png" alt="" /></div></li>
-                        <li class="biker-logos" ><div class="box" style="background-color: RGBA(17, 47, 57, 1);"><img src="images/specialized logo.png" alt="" /></div></li>
-                        <li class="biker-logos" ><div class="box" style="background-color: RGBA(17, 47, 57, 1);"><img src="images/giant-logo.png" alt="" /></div></li>
-                        <li class="biker-logos" ><div class="box" style="background-color: RGBA(17, 47, 57, 1);"><img src="images/trek-logo.png" alt="" /></div></li>
-                        <li class="biker-logos" ><div class="box" style="background-color: RGBA(17, 47, 57, 1);"><img src="images/scott-logo.png" alt="" /></div></li>
-                    </ul>
-                </div>
+                <div class="bike-logo-section"> <!-- Start of Bike Logo Section -->
+                    <section class="bianchi">
+                        <a href="http://www.bianchiusa.com/bikes/road/"><img src="images/bianchi-logo.png"></a>
+                    </section>
+                    <section class="fuji">
+                        <a href="http://www.fujibikes.com/"><img src="images/fuji-logo.png"></a>
+                    </section>
+                    <section class="specialized">
+                        <a href="http://www.specialized.com/us/en/home/"><img src="images/specialized-logo.png"></a>
+                    </section>
+                    <section class="giant">
+                        <a href="http://www.cannondale.com/en/USA"><img src="images/cannondale-logo.png"></a>
+                    </section>
+                    <section class="trek">
+                        <a href="http://www.trekbikes.com/"><img src="images/trek-logo.png"></a>
+                    </section>
+                    <section class="scott">
+                        <a href="https://www.scott-sports.com/us/en/sports/bike"><img src="images/scott-logo.png"></a>
+                    </section>
+                </div> <!-- End of Bike Logo Section -->
 
-
-                <section class="bike-logo-section">
-                    <a class="biker-logos" href="https://www.facebook.com/miguel.ramirez.jr1"><img src="images/bianchi.svg"></a>
-                    <a class="biker-logos" href="https://www.facebook.com/miguel.ramirez.jr1"><img src="images/fuji-logo.png"></a>
-                    <a class="biker-logos" href="https://www.facebook.com/miguel.ramirez.jr1"><img src="images/specialized logo.png"></a>
-                    <a class="biker-logos" href="https://www.facebook.com/miguel.ramirez.jr1"><img src="images/giant-logo.png"></a>
-                    <a class="biker-logos" href="https://www.facebook.com/miguel.ramirez.jr1"><img src="images/trek-logo.png"></a>
-                    <a class="biker-logos" href="https://www.facebook.com/miguel.ramirez.jr1"><img src="images/scott-logo.png"></a>
-                </section>
             </footer> <!-- End of Footer -->
         </section>
     </div> <!-- End of Main Container -->
@@ -120,8 +121,6 @@
     <script src="./bower_components/glidejs/dist/glide.js"></script>
     <script type="text/javascript" src="scripts/main.js"></script>
     <script type="text/javascript" src="./bower_components/jquery/dist/jquery.js"></script>
-
-
 
 </body>
 </html>

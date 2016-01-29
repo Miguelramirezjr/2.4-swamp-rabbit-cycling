@@ -2,24 +2,45 @@
 @import '../bower_components/bourbon/app/assets/stylesheets/bourbon';
 @import '../bower_components/neat/app/assets/stylesheets/neat';
 
-$mobile:     740px;
-$mobile-r:   741px;
-$tablet:     980px;
+$primary-color: RGBA(17, 47, 57, 1);
+$secondary-color: RGBA(255, 255, 255, 1);
+$third-color: RGBA(23, 46, 56, 1);
+$fourth-color: RGBA(72, 152, 173, 1);
+$fifth-color: RGBA(204, 204, 204, 1);
+
+$small-desktop: new-breakpoint(max-width 1150px min-width 926px);
+$large-tablet: new-breakpoint(max-width 925px min-width 769px);
+$mobile: new-breakpoint(max-width 768px min-width 481px);
+$small-mobile: new-breakpoint(max-width 480px);
 
 body {
-    background-color: RGBA(17, 47, 57, 1);
+    background-color: $primary-color;
     margin: 0 auto;
+
+    @include media($large-tablet) {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    @include media($mobile) {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    @include media($small-mobile) {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
 }
 
-* { margin: 0; padding: 0; border: 0; }
+img {
+    width: 100%;
+    height: 100%;
+}
 
 .container {
     margin: 0 auto;
     max-width: 965px;
-
-    @media all and (max-width: $mobile) {
-        max-width: 480px;
-    }
 }
 
 a {
@@ -34,51 +55,74 @@ header {
     border: black 10px solid;
     padding: 90px;
 
-     @media all and (max-width: $mobile) {
-        background-position: left;
-
+    @include media($small-mobile) {
+        background-image: url("../images/mobile.jpg");
     }
-
-    // Breakpoint for Tablet
-    // // @media all and (min-width: $mobile-r) and (max-width: $tablet) {
-    //     background-position: right;
-    // }
-
-    // Breakpoint for Mobile
-    // @media all and (max-width: $mobile) {
-    //
-    // }
 }
 
 .header-img {
     height: 300px;
     padding-top: 82px;
+    margin-left: -400px;
+
+    @include media($mobile) {
+        height: 200px;
+    }
+
+    @include media($small-mobile) {
+        margin-right: -410px;
+        padding-bottom: -50px;
+    }
 }
 
 #primary_nav_wrap {
     margin-top:-90px;
-    margin-left: 90px;
+    margin-left: 70px;
+
+    @include media($large-tablet) {
+        margin-left: 50px;
+    }
+
+    @include media($mobile) {
+        width: 625px;
+        margin-left: -35px;
+    }
 
     ul {
        list-style:none;
        position:relative;
        float:left;
        margin:0;
-       padding:0
-    }
-}
+       padding:0;
 
-#primary_nav_wrap ul a {
-    display:block;
-    color: white;
-    text-decoration:none;
-    font-weight:700;
-    font-size:12px;
-    line-height:32px;
-    padding:0 15px;
-    font-family: "Raleway", "sans-serif";
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
+       @include media($small-mobile) {
+        margin-left: -80px;
+        margin-right: -50px;
+       }
+    }
+
+    a {
+        display:block;
+        color: $secondary-color;
+        text-decoration:none;
+        font-weight:700;
+        font-size:12px;
+        line-height:32px;
+        padding:0 15px;
+        font-family: "Raleway", "sans-serif";
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+
+        @include media($small-mobile) {
+            color: $secondary-color;
+            text-decoration:none;
+            font-size:11px;
+            font-family: "Raleway", "sans-serif";
+            text-transform: uppercase;
+            padding: 5px;
+            padding-top: 30px;
+        }
+    }
 }
 
 #primary_nav_wrap ul li {
@@ -86,10 +130,10 @@ header {
     float:left;
     margin:0;
     padding:0;
-}
 
-#primary_nav_wrap ul li a:hover {
-    color: #000;
+    ul li a:hover {
+        color: $fourth-color;
+    }
 }
 
 #primary_nav_wrap ul ul {
@@ -97,18 +141,24 @@ header {
     position:absolute;
     top:100%;
     left:0;
-    background-color: RGBA(23, 46, 56, 1);
+    background-color: $third-color;
     padding:0;
     letter-spacing: 1px;
-}
 
-#primary_nav_wrap ul ul li {
-    float:none;
-    width:200px;
+    li {
+        float:none;
+        width:200px;
+    }
 }
 
 #primary_nav_wrap ul li:hover > ul {
     display:block;
+}
+
+.current-menu-item span {
+    @include media($small-mobile) {
+        display: none;
+    }
 }
 
 article {
@@ -122,7 +172,7 @@ article {
 }
 
 .article-1 {
-    background-color: white;
+    background-color: $secondary-color;
     border: black 10px solid;
 }
 
@@ -152,38 +202,16 @@ article {
         max-width: 520px;
         margin-left: -8rem;
     }
-
-    @media all and (max-width: $mobile) {
-        position: relative;
-
-        div {
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            max-width: 100%;
-        }
-
-        .pic3 {
-            margin-left: -3rem;
-        }
-    }
 }
 
 .article-2 {
     border: black 10px solid;
-    background-color: white;
-
-    @media all and (max-width: $mobile) {
-        display: none;
-    }
-
+    background-color: $secondary-color;
 }
 
 .article-3 {
     border: black 10px solid;
-    background-color: white;
+    background-color: $secondary-color;
     color: black;
     padding: 100px 75px;
 
@@ -213,19 +241,30 @@ article {
     .email {
         font-size: 30px;
 
-        @media all and (max-width: $mobile) {
-            font-size: 20px;
+        @include media($small-mobile) {
+            font-size: 24px;
+            margin-left: -48px;
         }
-
-
     }
 }
 
 .social-icons {
     margin-left: 300px;
 
+    @include media($large-tablet) {
+        margin-left: 275px;
+    }
+
+    @include media($mobile) {
+        margin-left: 190px;
+    }
+
+    @include media($small-mobile) {
+        margin-left: 50px;
+    }
+
     a {
-        color: RGBA(23, 46, 56, 1);
+        color: $third-color;
     }
 }
 
@@ -233,8 +272,16 @@ article {
 footer {
     padding: 40px;
     border: black 10px solid;
-    background-color: white;
+    background-color: $secondary-color;
     color: black;
+
+    @include media($large-tablet) {
+        padding: 25px;
+    }
+
+    @include media($small-mobile) {
+        padding: 20px;
+    }
 
     p {
         font-family: "Raleway", "sans-serif";
@@ -249,57 +296,161 @@ footer {
         vertical-align: top;
         padding-top: 25px;
 
-        @media all and (min-width: $mobile-r) and (max-width: $tablet) {
-            width: 67%;
+        @include media($mobile) {
+            font-size: 28px;
         }
 
-        @media all and (max-width: $mobile) {
-            width: 61%;
-            font-size: 25px;
+        @include media($small-mobile) {
+            font-size: 24px;
+            padding-right: 90px;
+            padding-top: 10px;
         }
     }
 
     img {
+        padding: 10px;
         max-width: 100px;
         max-height: 100px;
         display: inline-block;
 
-        @media all and (max-width: $mobile) {
+        @include media($mobile) {
+            padding: 1px;
             max-width: 70px;
             max-height: 70px;
         }
     }
 }
 
-.biker-logo-section a {
-    height: 50px;
-    vertical-align: top;
+.footer-logo1 {
+    float: left;
 }
 
-.biker-logos {
-    margin-left: 30px;
+.footer-logo2 {
+    @include media($small-mobile) {
+        float: right;
+        margin-top: -95px;
+    }
+}
+
+.bike-logo-section {
+    @include media($large-tablet) {
+        padding-top: 15px;
+    }
+
+    @include media($small-mobile) {
+        display: none;
+    }
 }
 
 .bianchi {
-    // margin-top: -20px;
+    margin-left: 60px;
+    height: 100px;
+    width: 100px;
+
+    @include media($mobile) {
+        margin-left: 30px;
+        height: 60px;
+        width: 60px;
+    }
+}
+
+.fuji {
+    margin-left: 170px;
+    margin-top: -100px;
+    height: 100px;
+    width: 100px;
+
+    @include media($mobile) {
+        margin-left: 130px;
+        margin-top: -60px;
+        height: 60px;
+        width: 60px;
+    }
+}
+
+.specialized {
+    margin-left: 300px;
+    margin-top: -110px;
+    height: 100px;
+    width: 100px;
+
+    @include media($mobile) {
+        margin-left: 240px;
+        margin-top: -65px;
+        height: 60px;
+        width: 60px;
+    }
+}
+
+.giant {
+    margin-left: 440px;
+    margin-top: -90px;
+    height: 100px;
+    width: 100px;
+
+    @include media($mobile) {
+        margin-left: 350px;
+        margin-top: -50px;
+        height: 60px;
+        width: 60px;
+    }
+}
+
+.trek {
+    margin-left: 570px;
+    margin-top: -100px;
+    height: 100px;
+    width: 100px;
+
+    @include media($mobile) {
+        margin-left: 450px;
+        margin-top: -60px;
+        height: 60px;
+        width: 60px;
+    }
+}
+
+.scott {
+    margin-left: 690px;
+    margin-top: -100px;
+    height: 100px;
+    width: 100px;
+
+    @include media($mobile) {
+        margin-left: 550px;
+        margin-top: -60px;
+        height: 60px;
+        width: 60px;
+    }
 }
 
 .slider {
     position: relative;
     width: 965px;
-    height: 700px;
+    height: 550px;
     background-repeat: no-repeat;
     overflow: hidden;
     border: black 10px solid;
+
+    @include media($large-tablet) {
+        width: 915px;
+        height: 523px;
+    }
+
+    @include media($mobile) {
+        width: 757px;
+        height: 435px;
+    }
+
+    @include media($small-mobile) {
+        width: 469px;
+        height: 273px;
+    }
 }
 
 .slider__wrapper {
-    // height: 100%;
     list-style: none;
     overflow: hidden;
-    *zoom: 1;
-    -webkit-backface-visibility: hidden;
-    -webkit-transform-style: preserve-3d;
 }
 
 .slider__item {
@@ -337,13 +488,13 @@ footer {
     clear: none;
     display: block;
     margin: 0 5px;
-    background: #fff;
+    background: $secondary-color;
 }
 
 .slider__nav-item--current {
-    background: #ccc;
+    background: $fifth-color;
 }
 
 .slider__nav-item:hover {
-    background: #ccc;
+    background: $fifth-color;
 }
